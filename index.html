@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome To Your Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ==========================================
+    TOP: CLOCK + SEARCH
+    ========================================== -->
+    <div class="top-section">
+        <div class="clock-widget">
+            <div class="time-display" id="clock-time">00:00</div>
+            <div class="date-display" id="clock-date">DAY, MONTH 00</div>
+        </div>
+
+        <div class="search-system">
+            <input type="text" id="web-search" class="search-bar" placeholder="Search the web (Google)…" autocomplete="off" />
+            <input type="text" id="app-search" class="search-bar" placeholder="Filter local apps…" autocomplete="off" />
+        </div>
+
+        <div class="top-spacer"></div>
+    </div>
+
+    <!-- ==========================================
+    WORKSPACE — FOLDERS
+    ========================================== -->
+    <main id="workspace" class="workspace">
+
+        <button class="large-folder" onclick="openModal('modal-sut')" type="button">
+            <div class="folder-box">
+                <img data-domain="login.microsoftonline.com" alt="" /><img data-domain="learnms.sut.edu.eg" alt="" /><img data-domain="qms.sut.edu.eg" alt="" /><img data-domain="notion.so" alt="" />
+            </div>
+            <span class="folder-label">SUT Apps</span>
+        </button>
+
+        <button class="large-folder" onclick="openModal('modal-ai')" type="button">
+            <div class="folder-box">
+                <img data-domain="chatgpt.com" alt="" /><img data-domain="gemini.google.com" alt="" /><img data-domain="claude.ai" alt="" /><img data-domain="perplexity.ai" alt="" /><img data-domain="deepseek.com" alt="" /><img data-domain="grok.com" alt="" /><img data-domain="qwen.ai" alt="" /><img data-domain="notebooklm.google.com" alt="" /><img data-domain="scite.ai" alt="" />
+            </div>
+            <span class="folder-label">AI Cognition</span>
+        </button>
+
+        <button class="large-folder" onclick="openModal('modal-dev')" type="button">
+            <div class="folder-box">
+                <img data-domain="github.com" alt="" /><img data-domain="online-python.com" alt="" /><img data-domain="onlinegdb.com" alt="" /><img data-domain="it-tools.tech" alt="" /><img data-domain="quickref.me" alt="" /><img data-domain="harvard.edu" alt="" /><img data-domain="geogebra.org" alt="" />
+            </div>
+            <span class="folder-label">Development</span>
+        </button>
+
+        <button class="large-folder" onclick="openModal('modal-proj')" type="button">
+            <div class="folder-box">
+                <img data-domain="github.io" alt="" /><img data-domain="firebase.google.com" alt="" /><img data-domain="notion.so" alt="" /><img data-domain="railway.app" alt="" /><img data-domain="phpmyadmin.net" alt="" /><img data-domain="netlify.com" alt="" />
+            </div>
+            <span class="folder-label">Project I</span>
+        </button>
+
+        <button class="large-folder" onclick="openModal('modal-tools')" type="button">
+            <div class="folder-box">
+                <img data-domain="i2pdf.com" alt="" /><img data-domain="stirlingpdf.io" alt="" /><img data-domain="ilovepdf.com" alt="" /><img data-domain="mdtoword.org" alt="" /><img data-domain="remove.photos" alt="" /><img data-domain="nomorecopyright.com" alt="" /><img data-domain="temp-mail.org" alt="" /><img data-domain="imagecolorpicker.com" alt="" />
+            </div>
+            <span class="folder-label">Media &amp; Utilities</span>
+        </button>
+
+        <button class="large-folder" onclick="openModal('modal-cyber')" type="button">
+            <div class="folder-box">
+                <img data-domain="pentestgpt.ai" alt="" /><img data-domain="portswigger.net" alt="" /><img data-domain="sans.org" alt="" /><img data-domain="n-able.com" alt="" /><img data-domain="cloudskillsboost.google" alt="" /><img data-domain="sqlpd.com" alt="" />
+            </div>
+            <span class="folder-label">Cyber Labs</span>
+        </button>
+
+        <button class="large-folder" onclick="openModal('modal-ent')" type="button">
+            <div class="folder-box">
+                <img data-domain="theflixertv.to" alt="" /><img data-domain="hdtodayz.to" alt="" /><img data-domain="flixhq.to" alt="" /><img data-domain="himovies.sx" alt="" /><img data-domain="moviesjoytv.to" alt="" /><img data-domain="fushaar.com" alt="" /><img data-domain="asd.rest" alt="" /><img data-domain="cimaa4u.com" alt="" /><img data-domain="wecima.watch" alt="" />
+            </div>
+            <span class="folder-label">Entertainment</span>
+        </button>
+
+    </main>
+
+    <!-- ==========================================
+    SEARCH RESULTS
+    ========================================== -->
+    <div id="search-results"></div>
+
+    <!-- ==========================================
+    DOCK — Favorites & Quick Apps
+    ========================================== -->
+    <nav class="dock" id="app-dock" role="toolbar" aria-label="App Dock">
+        <a href="https://www.youtube.com/" class="dock-item" title="YouTube">
+            <span class="dock-icon"><img data-domain="youtube.com" alt="" /></span>
+            <span class="dock-label">YouTube</span>
+        </a>
+        <a href="https://translate.google.com/?sl=en&tl=ar&op=translate" class="dock-item" title="Translate">
+            <span class="dock-icon"><img data-domain="translate.google.com" alt="" /></span>
+            <span class="dock-label">Translate</span>
+        </a>
+        <a href="https://drive.google.com/drive/home" class="dock-item" title="Google Drive">
+            <span class="dock-icon"><img data-domain="drive.google.com" alt="" /></span>
+            <span class="dock-label">Drive</span>
+        </a>
+        <a href="https://sutechnology-my.sharepoint.com/" class="dock-item" title="OneDrive">
+            <span class="dock-icon"><img data-domain="sharepoint.com" alt="" /></span>
+            <span class="dock-label">OneDrive</span>
+        </a>
+
+    </nav>
+
+    <!-- ==========================================
+    SETTINGS BUTTON
+    ========================================== -->
+    <button class="settings-btn" onclick="openModal('modal-settings')" type="button" aria-label="Settings">
+        <svg viewBox="0 0 24 24">
+            <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.73,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.49-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+        </svg>
+    </button>
+
+    <!-- ==========================================
+    OVERLAY MODALS
+    ========================================== -->
+    <div id="modal-container">
+
+        <!-- Settings Modal -->
+        <div class="overlay" id="modal-settings" onclick="closeModal(event)">
+            <div class="settings-panel" onclick="event.stopPropagation()">
+                <div class="settings-sidebar">
+                    <button class="settings-tab active" data-tab="cat" onclick="switchSetting('cat', this)">Categories</button>
+                    <button class="settings-tab" data-tab="fav" onclick="switchSetting('fav', this)">Favorites</button>
+                    <button class="settings-tab" data-tab="time" onclick="switchSetting('time', this)">Date &amp; Time</button>
+                    <button class="settings-tab" data-tab="theme" onclick="switchSetting('theme', this)">Themes</button>
+                    <button class="settings-tab" data-tab="bg" onclick="switchSetting('bg', this)">Background</button>
+                    <button class="settings-tab" data-tab="search" onclick="switchSetting('search', this)">Search</button>
+                </div>
+                <div class="settings-content">
+                    <!-- Categories -->
+                    <div id="set-cat">
+                        <div class="settings-header">Manage Categories</div>
+                        <div class="setting-row"><span class="setting-label">SUT Apps</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">AI Cognition</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">Development</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">Project I</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">Media &amp; Utilities</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">Cyber Labs</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">Entertainment</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row" style="border-bottom: none; padding-top: 20px;">
+                            <button class="setting-control primary">+ Add New Category</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Favorites (Dock) -->
+                    <div id="set-fav" class="hidden">
+                        <div class="settings-header">Manage Favorites (Dock)</div>
+                        <div class="setting-row"><span class="setting-label">YouTube</span><button class="setting-control">Remove</button></div>
+                        <div class="setting-row"><span class="setting-label">Translate</span><button class="setting-control">Remove</button></div>
+                        <div class="setting-row"><span class="setting-label">Drive</span><button class="setting-control">Remove</button></div>
+                        <div class="setting-row"><span class="setting-label">OneDrive</span><button class="setting-control">Remove</button></div>
+                        <div class="setting-row" style="border-bottom: none; padding-top: 20px;">
+                            <button class="setting-control primary">+ Add to Dock</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Time -->
+                    <div id="set-time" class="hidden">
+                        <div class="settings-header">Date &amp; Time</div>
+                        <div class="setting-row">
+                            <span class="setting-label">Format</span>
+                            <button class="setting-control primary" data-time-format>24-Hour</button>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">Show Seconds</span>
+                            <button class="setting-control" data-time-seconds>Off</button>
+                        </div>
+                        <div class="setting-row" style="border-bottom: none;">
+                            <span class="setting-label">Time Zone</span>
+                            <button class="setting-control">Auto</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Themes -->
+                    <div id="set-theme" class="hidden">
+                        <div class="settings-header">Themes</div>
+                        <div class="setting-row">
+                            <span class="setting-label">Dark</span>
+                            <button class="setting-control primary" data-theme="dark">Apply</button>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">Light</span>
+                            <button class="setting-control" data-theme="light">Apply</button>
+                        </div>
+                        <div class="setting-row" style="border-bottom: none;">
+                            <span class="setting-label">Neon Cyber</span>
+                            <button class="setting-control" data-theme="neon">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Background -->
+                    <div id="set-bg" class="hidden">
+                        <div class="settings-header">Background</div>
+                        <div class="setting-row">
+                            <span class="setting-label">Gradient</span>
+                            <button class="setting-control primary" data-bg="gradient">Apply</button>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">Dark Solid</span>
+                            <button class="setting-control" data-bg="dark">Apply</button>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">Deep Blue</span>
+                            <button class="setting-control" data-bg="darkblue">Apply</button>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">Purple</span>
+                            <button class="setting-control" data-bg="purple">Apply</button>
+                        </div>
+                        <div class="setting-row" style="border-bottom: none;">
+                            <span class="setting-label">Custom Image</span>
+                            <button class="setting-control" data-bg="custom">Set URL</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Search -->
+                    <div id="set-search" class="hidden">
+                        <div class="settings-header">Search Engine</div>
+                        <div class="setting-row">
+                            <span class="setting-label">Google</span>
+                            <button class="setting-control primary" data-search="google">Set</button>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">DuckDuckGo</span>
+                            <button class="setting-control" data-search="duckduckgo">Set</button>
+                        </div>
+                        <div class="setting-row">
+                            <span class="setting-label">Bing</span>
+                            <button class="setting-control" data-search="bing">Set</button>
+                        </div>
+                        <div class="setting-row" style="border-bottom: none;">
+                            <span class="setting-label">Brave</span>
+                            <button class="setting-control" data-search="brave">Set</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FAVORITES MODAL ===== -->
+        <div class="overlay" id="modal-fav" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">⭐ Favorites</div>
+                <div class="folder-grid">
+                    <a href="https://www.youtube.com/" class="app-item local-app"><span class="app-icon"><img data-domain="youtube.com" alt="" /></span><span class="app-title">YouTube</span></a>
+                    <a href="https://translate.google.com/?sl=en&tl=ar&op=translate" class="app-item local-app"><span class="app-icon"><img data-domain="translate.google.com" alt="" /></span><span class="app-title">Translate</span></a>
+                    <a href="https://drive.google.com/drive/home" class="app-item local-app"><span class="app-icon"><img data-domain="drive.google.com" alt="" /></span><span class="app-title">Drive</span></a>
+                    <a href="https://sutechnology-my.sharepoint.com/" class="app-item local-app"><span class="app-icon"><img data-domain="sharepoint.com" alt="" /></span><span class="app-title">OneDrive</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SUT MODAL ===== -->
+        <div class="overlay" id="modal-sut" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🎓 SUT Apps</div>
+                <div class="folder-grid">
+                    <a href="https://login.microsoftonline.com/4cf493e2-c44f-4a85-9650-f432e907ba34/oauth2/authorize?response_type=code&client_id=a7071515-b10a-4c70-843e-cf3a001183c5&redirect_uri=https%3A%2F%2Fsis.sut.edu.eg%2FDefaultAAD.aspx&prompt=login" class="app-item local-app"><span class="app-icon"><img data-domain="login.microsoftonline.com" alt="" /></span><span class="app-title">SIS</span></a>
+                    <a href="https://learnms.sut.edu.eg/my/" class="app-item local-app"><span class="app-icon"><img data-domain="learnms.sut.edu.eg" alt="" /></span><span class="app-title">LMS</span></a>
+                    <a href="https://qms.sut.edu.eg/" class="app-item local-app"><span class="app-icon"><img data-domain="qms.sut.edu.eg" alt="" /></span><span class="app-title">QMS</span></a>
+                    <a href="https://studyingresources1.notion.site/The-Library-319492c026c34a37a77ef92e053a394d" class="app-item local-app"><span class="app-icon"><img data-domain="notion.so" alt="" /></span><span class="app-title">Library</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== AI MODAL ===== -->
+        <div class="overlay" id="modal-ai" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🧠 AI Cognition</div>
+                <div class="folder-grid">
+                    <a href="https://chatgpt.com/" class="app-item local-app"><span class="app-icon"><img data-domain="chatgpt.com" alt="" /></span><span class="app-title">ChatGPT</span></a>
+                    <a href="https://gemini.google.com/app" class="app-item local-app"><span class="app-icon"><img data-domain="gemini.google.com" alt="" /></span><span class="app-title">Gemini</span></a>
+                    <a href="https://claude.ai/new" class="app-item local-app"><span class="app-icon"><img data-domain="claude.ai" alt="" /></span><span class="app-title">Claude</span></a>
+                    <a href="https://chat.deepseek.com/" class="app-item local-app"><span class="app-icon"><img data-domain="deepseek.com" alt="" /></span><span class="app-title">DeepSeek</span></a>
+                    <a href="https://www.perplexity.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="perplexity.ai" alt="" /></span><span class="app-title">Perplexity</span></a>
+                    <a href="https://grok.com/" class="app-item local-app"><span class="app-icon"><img data-domain="grok.com" alt="" /></span><span class="app-title">Grok</span></a>
+                    <a href="https://chat.qwen.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="qwen.ai" alt="" /></span><span class="app-title">Qwen</span></a>
+                    <a href="https://notebooklm.google.com/" class="app-item local-app"><span class="app-icon"><img data-domain="notebooklm.google.com" alt="" /></span><span class="app-title">NotebookLM</span></a>
+                    <a href="https://scite.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="scite.ai" alt="" /></span><span class="app-title">Scite</span></a>
+                    <a href="https://groq.com/" class="app-item local-app"><span class="app-icon"><img data-domain="groq.com" alt="" /></span><span class="app-title">Groq</span></a>
+                    <a href="https://www.phind.com/" class="app-item local-app"><span class="app-icon"><img data-domain="phind.com" alt="" /></span><span class="app-title">Phind</span></a>
+                    <a href="https://chat.z.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="z.ai" alt="" /></span><span class="app-title">Z.ai</span></a>
+                    <a href="https://www.junia.ai/tools/prompt-generator" class="app-item local-app"><span class="app-icon"><img data-domain="junia.ai" alt="" /></span><span class="app-title">Junia</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DEV MODAL ===== -->
+        <div class="overlay" id="modal-dev" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">💻 Development</div>
+                <div class="folder-grid">
+                    <a href="http://127.0.0.1:5500/" class="app-item local-app"><span class="app-icon"><img data-domain="github.com" alt="" /></span><span class="app-title">VS Code</span></a>
+                    <a href="https://www.online-python.com/" class="app-item local-app"><span class="app-icon"><img data-domain="online-python.com" alt="" /></span><span class="app-title">Python IDE</span></a>
+                    <a href="https://www.onlinegdb.com/online_bash_shell" class="app-item local-app"><span class="app-icon"><img data-domain="onlinegdb.com" alt="" /></span><span class="app-title">Bash Shell</span></a>
+                    <a href="https://it-tools.tech/" class="app-item local-app"><span class="app-icon"><img data-domain="it-tools.tech" alt="" /></span><span class="app-title">IT Tools</span></a>
+                    <a href="https://quickref.me/" class="app-item local-app"><span class="app-icon"><img data-domain="quickref.me" alt="" /></span><span class="app-title">QuickRef</span></a>
+                    <a href="https://cs50.harvard.edu/x/2024/" class="app-item local-app"><span class="app-icon"><img data-domain="harvard.edu" alt="" /></span><span class="app-title">CS50x</span></a>
+                    <a href="https://www.geogebra.org/calculator" class="app-item local-app"><span class="app-icon"><img data-domain="geogebra.org" alt="" /></span><span class="app-title">GeoGebra</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== PROJECT I MODAL ===== -->
+        <div class="overlay" id="modal-proj" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🚀 Project I</div>
+                <div class="folder-grid">
+                    <a href="https://afrooo00101.github.io/EduMate/" class="app-item local-app"><span class="app-icon"><img data-domain="github.io" alt="" /></span><span class="app-title">Edumate</span></a>
+                    <a href="https://console.firebase.google.com/" class="app-item local-app"><span class="app-icon"><img data-domain="firebase.google.com" alt="" /></span><span class="app-title">Firebase</span></a>
+                    <a href="https://www.notion.so/ERD-1-33b3a92434378066b548d4c47c0857fa" class="app-item local-app"><span class="app-icon"><img data-domain="notion.so" alt="" /></span><span class="app-title">ERD Maps</span></a>
+                    <a href="https://railway.com/dashboard" class="app-item local-app"><span class="app-icon"><img data-domain="railway.app" alt="" /></span><span class="app-title">Railway</span></a>
+                    <a href="https://phpmyadmin-production-da68.up.railway.app/" class="app-item local-app"><span class="app-icon"><img data-domain="phpmyadmin.net" alt="" /></span><span class="app-title">phpMyAdmin</span></a>
+                    <a href="https://app.netlify.com/login" class="app-item local-app"><span class="app-icon"><img data-domain="netlify.com" alt="" /></span><span class="app-title">Netlify</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TOOLS MODAL ===== -->
+        <div class="overlay" id="modal-tools" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🛠 Media &amp; Utilities</div>
+                <div class="folder-grid">
+                    <a href="https://www.i2pdf.com/" class="app-item local-app"><span class="app-icon"><img data-domain="i2pdf.com" alt="" /></span><span class="app-title">i2PDF</span></a>
+                    <a href="https://stirlingpdf.io/?lang=en_US" class="app-item local-app"><span class="app-icon"><img data-domain="stirlingpdf.io" alt="" /></span><span class="app-title">Stirling PDF</span></a>
+                    <a href="https://www.ilovepdf.com/" class="app-item local-app"><span class="app-icon"><img data-domain="ilovepdf.com" alt="" /></span><span class="app-title">I❤️PDF</span></a>
+                    <a href="https://mdtoword.org/markdown-to-docx" class="app-item local-app"><span class="app-icon"><img data-domain="mdtoword.org" alt="" /></span><span class="app-title">MD→DOCX</span></a>
+                    <a href="https://remove.photos/" class="app-item local-app"><span class="app-icon"><img data-domain="remove.photos" alt="" /></span><span class="app-title">Remove BG</span></a>
+                    <a href="https://nomorecopyright.com/" class="app-item local-app"><span class="app-icon"><img data-domain="nomorecopyright.com" alt="" /></span><span class="app-title">Free Images</span></a>
+                    <a href="https://temp-mail.org/" class="app-item local-app"><span class="app-icon"><img data-domain="temp-mail.org" alt="" /></span><span class="app-title">Temp Mail</span></a>
+                    <a href="https://imagecolorpicker.com/" class="app-item local-app"><span class="app-icon"><img data-domain="imagecolorpicker.com" alt="" /></span><span class="app-title">Color Picker</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CYBER MODAL ===== -->
+        <div class="overlay" id="modal-cyber" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🛡 Cyber Labs</div>
+                <div class="folder-grid">
+                    <a href="https://pentestgpt.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="pentestgpt.ai" alt="" /></span><span class="app-title">PentestGPT</span></a>
+                    <a href="https://portswigger.net/web-security" class="app-item local-app"><span class="app-icon"><img data-domain="portswigger.net" alt="" /></span><span class="app-title">PortSwigger</span></a>
+                    <a href="https://www.sans.org/information-security-policy" class="app-item local-app"><span class="app-icon"><img data-domain="sans.org" alt="" /></span><span class="app-title">SANS Policy</span></a>
+                    <a href="https://www.n-able.com/features/computer-security-vulnerabilities" class="app-item local-app"><span class="app-icon"><img data-domain="n-able.com" alt="" /></span><span class="app-title">Net Vuln</span></a>
+                    <a href="https://www.cloudskillsboost.google/" class="app-item local-app"><span class="app-icon"><img data-domain="cloudskillsboost.google" alt="" /></span><span class="app-title">Cloud Skills</span></a>
+                    <a href="https://sqlpd.com/" class="app-item local-app"><span class="app-icon"><img data-domain="sqlpd.com" alt="" /></span><span class="app-title">SQL Police</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== ENTERTAINMENT MODAL ===== -->
+        <div class="overlay" id="modal-ent" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🎬 Entertainment</div>
+                <div class="folder-grid">
+                    <a href="https://theflixertv.to/home" class="app-item local-app"><span class="app-icon"><img data-domain="theflixertv.to" alt="" /></span><span class="app-title">The Flixer</span></a>
+                    <a href="https://hdtodayz.to/home" class="app-item local-app"><span class="app-icon"><img data-domain="hdtodayz.to" alt="" /></span><span class="app-title">HD Today</span></a>
+                    <a href="https://flixhq.to/home" class="app-item local-app"><span class="app-icon"><img data-domain="flixhq.to" alt="" /></span><span class="app-title">FlixHQ</span></a>
+                    <a href="https://123chill.online/" class="app-item local-app"><span class="app-icon"><img data-domain="123chill.online" alt="" /></span><span class="app-title">123chill</span></a>
+                    <a href="https://himovies.sx/home" class="app-item local-app"><span class="app-icon"><img data-domain="himovies.sx" alt="" /></span><span class="app-title">HiMovies</span></a>
+                    <a href="https://moviesjoytv.to/home" class="app-item local-app"><span class="app-icon"><img data-domain="moviesjoytv.to" alt="" /></span><span class="app-title">MoviesJoy</span></a>
+                    <a href="https://ww25.soap2day.day/" class="app-item local-app"><span class="app-icon"><img data-domain="soap2day.day" alt="" /></span><span class="app-title">Soap2day</span></a>
+                    <a href="https://www.fushaar.com/" class="app-item local-app"><span class="app-icon"><img data-domain="fushaar.com" alt="" /></span><span class="app-title">Fushaar</span></a>
+                    <a href="https://asd.rest/main/" class="app-item local-app"><span class="app-icon"><img data-domain="asd.rest" alt="" /></span><span class="app-title">Arabseed</span></a>
+                    <a href="https://ar.cimaa4u.com/" class="app-item local-app"><span class="app-icon"><img data-domain="cimaa4u.com" alt="" /></span><span class="app-title">CIMA4U</span></a>
+                    <a href="https://web184.faselhd.cafe/" class="app-item local-app"><span class="app-icon"><img data-domain="faselhd.cafe" alt="" /></span><span class="app-title">Fasel HD</span></a>
+                    <a href="https://wecima.watch/" class="app-item local-app"><span class="app-icon"><img data-domain="wecima.watch" alt="" /></span><span class="app-title">WECIMA</span></a>
+                    <a href="https://mycima.autos/" class="app-item local-app"><span class="app-icon"><img data-domain="mycima.autos" alt="" /></span><span class="app-title">MyCima</span></a>
+                    <a href="https://movizlnd.com/" class="app-item local-app"><span class="app-icon"><img data-domain="movizlnd.com" alt="" /></span><span class="app-title">MovizLand</span></a>
+                    <a href="https://www.airconsole.com/" class="app-item local-app"><span class="app-icon"><img data-domain="airconsole.com" alt="" /></span><span class="app-title">AirConsole</span></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
