@@ -31,53 +31,134 @@
     ========================================== -->
     <main id="workspace" class="workspace">
 
+        <!-- Favorites Folder -->
+
+        <!-- SUT -->
         <button class="large-folder" onclick="openModal('modal-sut')" type="button">
             <div class="folder-box">
                 <img data-domain="login.microsoftonline.com" alt="" /><img data-domain="learnms.sut.edu.eg" alt="" /><img data-domain="qms.sut.edu.eg" alt="" /><img data-domain="notion.so" alt="" />
             </div>
-            <span class="folder-label">SUT Apps</span>
+            <span class="folder-label">🎓 SUT Apps</span>
         </button>
 
+        <!-- AI -->
         <button class="large-folder" onclick="openModal('modal-ai')" type="button">
             <div class="folder-box">
                 <img data-domain="chatgpt.com" alt="" /><img data-domain="gemini.google.com" alt="" /><img data-domain="claude.ai" alt="" /><img data-domain="perplexity.ai" alt="" /><img data-domain="deepseek.com" alt="" /><img data-domain="grok.com" alt="" /><img data-domain="qwen.ai" alt="" /><img data-domain="notebooklm.google.com" alt="" /><img data-domain="scite.ai" alt="" />
             </div>
-            <span class="folder-label">AI Cognition</span>
+            <span class="folder-label">🧠 AI Cognition</span>
         </button>
 
+        <!-- Dev -->
         <button class="large-folder" onclick="openModal('modal-dev')" type="button">
             <div class="folder-box">
                 <img data-domain="github.com" alt="" /><img data-domain="online-python.com" alt="" /><img data-domain="onlinegdb.com" alt="" /><img data-domain="it-tools.tech" alt="" /><img data-domain="quickref.me" alt="" /><img data-domain="harvard.edu" alt="" /><img data-domain="geogebra.org" alt="" />
             </div>
-            <span class="folder-label">Development</span>
+            <span class="folder-label">💻 Development</span>
         </button>
 
+        <!-- Project I -->
         <button class="large-folder" onclick="openModal('modal-proj')" type="button">
             <div class="folder-box">
                 <img data-domain="github.io" alt="" /><img data-domain="firebase.google.com" alt="" /><img data-domain="notion.so" alt="" /><img data-domain="railway.app" alt="" /><img data-domain="phpmyadmin.net" alt="" /><img data-domain="netlify.com" alt="" />
             </div>
-            <span class="folder-label">Project I</span>
+            <span class="folder-label">🚀 Project I</span>
         </button>
 
+        <!-- Tools -->
         <button class="large-folder" onclick="openModal('modal-tools')" type="button">
             <div class="folder-box">
                 <img data-domain="i2pdf.com" alt="" /><img data-domain="stirlingpdf.io" alt="" /><img data-domain="ilovepdf.com" alt="" /><img data-domain="mdtoword.org" alt="" /><img data-domain="remove.photos" alt="" /><img data-domain="nomorecopyright.com" alt="" /><img data-domain="temp-mail.org" alt="" /><img data-domain="imagecolorpicker.com" alt="" />
             </div>
-            <span class="folder-label">Media &amp; Utilities</span>
+            <span class="folder-label">🛠 Media &amp; Utilities</span>
         </button>
 
+        <!-- Cyber -->
         <button class="large-folder" onclick="openModal('modal-cyber')" type="button">
             <div class="folder-box">
                 <img data-domain="pentestgpt.ai" alt="" /><img data-domain="portswigger.net" alt="" /><img data-domain="sans.org" alt="" /><img data-domain="n-able.com" alt="" /><img data-domain="cloudskillsboost.google" alt="" /><img data-domain="sqlpd.com" alt="" />
             </div>
-            <span class="folder-label">Cyber Labs</span>
+            <span class="folder-label">🛡 Cyber Labs</span>
         </button>
 
+        <!-- Entertainment -->
         <button class="large-folder" onclick="openModal('modal-ent')" type="button">
             <div class="folder-box">
                 <img data-domain="theflixertv.to" alt="" /><img data-domain="hdtodayz.to" alt="" /><img data-domain="flixhq.to" alt="" /><img data-domain="himovies.sx" alt="" /><img data-domain="moviesjoytv.to" alt="" /><img data-domain="fushaar.com" alt="" /><img data-domain="asd.rest" alt="" /><img data-domain="cimaa4u.com" alt="" /><img data-domain="wecima.watch" alt="" />
             </div>
-            <span class="folder-label">Entertainment</span>
+            <span class="folder-label">🎬 Entertainment</span>
+        </button>
+
+        <!-- AI Tools (from PDF page 1) -->
+        <button class="large-folder" onclick="openModal('modal-aitools')" type="button">
+            <div class="folder-box">
+                <img data-domain="bestofai.com" alt="" /><img data-domain="kimi.com" alt="" /><img data-domain="make.com" alt="" /><img data-domain="abacus.ai" alt="" /><img data-domain="templo.io" alt="" /><img data-domain="bardeen.ai" alt="" /><img data-domain="prowritingaid.com" alt="" /><img data-domain="lightpdf.com" alt="" /><img data-domain="ideogram.ai" alt="" />
+            </div>
+            <span class="folder-label">🤖 AI Tools</span>
+        </button>
+
+        <!-- Design & Dev Tools -->
+        <button class="large-folder" onclick="openModal('modal-design')" type="button">
+            <div class="folder-box">
+                <img data-domain="reactbits.dev" alt="" /><img data-domain="versus.com" alt="" /><img data-domain="paperanimator.com" alt="" /><img data-domain="animejs.com" alt="" /><img data-domain="napkin.ai" alt="" /><img data-domain="florafauna.ai" alt="" /><img data-domain="3dlogolab.io" alt="" /><img data-domain="logosystem.co" alt="" /><img data-domain="recraft.ai" alt="" />
+            </div>
+            <span class="folder-label">🎨 Design &amp; Dev</span>
+        </button>
+
+        <!-- More Tools -->
+        <button class="large-folder" onclick="openModal('modal-more')" type="button">
+            <div class="folder-box">
+                <img data-domain="seostudio.tools" alt="" /><img data-domain="playground.com" alt="" /><img data-domain="submagic.co" alt="" /><img data-domain="getgobii.com" alt="" /><img data-domain="3dtuning.com" alt="" /><img data-domain="logodiffusion.com" alt="" /><img data-domain="classcentral.com" alt="" /><img data-domain="flexboxlabs.netlify.app" alt="" /><img data-domain="visualgo.net" alt="" />
+            </div>
+            <span class="folder-label">🔧 More Tools</span>
+        </button>
+
+        <!-- AI & Research -->
+        <button class="large-folder" onclick="openModal('modal-research')" type="button">
+            <div class="folder-box">
+                <img data-domain="phind.com" alt="" /><img data-domain="aistudio.google.com" alt="" /><img data-domain="mult.dev" alt="" /><img data-domain="prepostseo.com" alt="" /><img data-domain="cssgridgenerator.io" alt="" /><img data-domain="runable.com" alt="" /><img data-domain="codedex.io" alt="" /><img data-domain="exercism.org" alt="" /><img data-domain="olmocr.allenai.org" alt="" />
+            </div>
+            <span class="folder-label">📚 AI &amp; Research</span>
+        </button>
+
+        <!-- PDF & Content -->
+        <button class="large-folder" onclick="openModal('modal-content')" type="button">
+            <div class="folder-box">
+                <img data-domain="textbehindimage.com" alt="" /><img data-domain="hackslaining.com" alt="" /><img data-domain="mobbin.com" alt="" /><img data-domain="thiings.co" alt="" /><img data-domain="code-wiki" alt="" /><img data-domain="gitdocify" alt="" /><img data-domain="apilayer.com" alt="" /><img data-domain="minimax.ai" alt="" /><img data-domain="antimatterai.com" alt="" />
+            </div>
+            <span class="folder-label">📄 Content &amp; Dev</span>
+        </button>
+
+        <!-- Learning & Design -->
+        <button class="large-folder" onclick="openModal('modal-learning')" type="button">
+            <div class="folder-box">
+                <img data-domain="imarena.ai" alt="" /><img data-domain="anything.com" alt="" /><img data-domain="chathub" alt="" /><img data-domain="saurabhdaware.github.io" alt="" /><img data-domain="google-lab" alt="" /><img data-domain="skywork" alt="" /><img data-domain="emergent.sh" alt="" /><img data-domain="canvas" alt="" /><img data-domain="pomelli" alt="" />
+            </div>
+            <span class="folder-label">📖 Learning &amp; Design</span>
+        </button>
+
+        <!-- More AI & Tools -->
+        <button class="large-folder" onclick="openModal('modal-extra')" type="button">
+            <div class="folder-box">
+                <img data-domain="opal" alt="" /><img data-domain="google-ai-studio" alt="" /><img data-domain="stitch" alt="" /><img data-domain="uiverse.io" alt="" /><img data-domain="cs.usfca.edu" alt="" /><img data-domain="csvistool.com" alt="" /><img data-domain="visualgo.net" alt="" /><img data-domain="kuse.ai" alt="" /><img data-domain="dripwriter.com" alt="" />
+            </div>
+            <span class="folder-label">⚡ Extra Tools</span>
+        </button>
+
+        <!-- Additional -->
+        <button class="large-folder" onclick="openModal('modal-extra2')" type="button">
+            <div class="folder-box">
+                <img data-domain="gitreverse.com" alt="" /><img data-domain="anara.com" alt="" /><img data-domain="sume.so" alt="" /><img data-domain="recall" alt="" /><img data-domain="fakedetail.com" alt="" /><img data-domain="urltoany.co" alt="" /><img data-domain="natively.dev" alt="" /><img data-domain="phet.colorado.edu" alt="" /><img data-domain="free-for.dev" alt="" />
+            </div>
+            <span class="folder-label">🔗 Additional</span>
+        </button>
+
+        <!-- Ai Studio & More -->
+        <button class="large-folder" onclick="openModal('modal-aistudio')" type="button">
+            <div class="folder-box">
+                <img data-domain="aistudio.google.com" alt="" /><img data-domain="flow" alt="" /><img data-domain="skywork" alt="" /><img data-domain="emergent.sh" alt="" /><img data-domain="canvas" alt="" /><img data-domain="pomelli" alt="" /><img data-domain="opal" alt="" /><img data-domain="google-ai-studio" alt="" /><img data-domain="stitch" alt="" />
+            </div>
+            <span class="folder-label">🎯 AI Studio</span>
         </button>
 
     </main>
@@ -107,7 +188,7 @@
             <span class="dock-icon"><img data-domain="sharepoint.com" alt="" /></span>
             <span class="dock-label">OneDrive</span>
         </a>
-
+        
     </nav>
 
     <!-- ==========================================
@@ -139,13 +220,23 @@
                     <!-- Categories -->
                     <div id="set-cat">
                         <div class="settings-header">Manage Categories</div>
-                        <div class="setting-row"><span class="setting-label">SUT Apps</span><button class="setting-control">Edit</button></div>
-                        <div class="setting-row"><span class="setting-label">AI Cognition</span><button class="setting-control">Edit</button></div>
-                        <div class="setting-row"><span class="setting-label">Development</span><button class="setting-control">Edit</button></div>
-                        <div class="setting-row"><span class="setting-label">Project I</span><button class="setting-control">Edit</button></div>
-                        <div class="setting-row"><span class="setting-label">Media &amp; Utilities</span><button class="setting-control">Edit</button></div>
-                        <div class="setting-row"><span class="setting-label">Cyber Labs</span><button class="setting-control">Edit</button></div>
-                        <div class="setting-row"><span class="setting-label">Entertainment</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">⭐ Favorites</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🎓 SUT Apps</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🧠 AI Cognition</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">💻 Development</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🚀 Project I</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🛠 Media &amp; Utilities</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🛡 Cyber Labs</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🎬 Entertainment</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🤖 AI Tools</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🎨 Design &amp; Dev</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🔧 More Tools</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">📚 AI &amp; Research</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">📄 Content &amp; Dev</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">📖 Learning &amp; Design</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">⚡ Extra Tools</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🔗 Additional</span><button class="setting-control">Edit</button></div>
+                        <div class="setting-row"><span class="setting-label">🎯 AI Studio</span><button class="setting-control">Edit</button></div>
                         <div class="setting-row" style="border-bottom: none; padding-top: 20px;">
                             <button class="setting-control primary">+ Add New Category</button>
                         </div>
@@ -246,6 +337,10 @@
             </div>
         </div>
 
+        <!-- ==========================================
+        ALL FOLDER MODALS
+        ========================================== -->
+
         <!-- ===== FAVORITES MODAL ===== -->
         <div class="overlay" id="modal-fav" onclick="closeModal(event)">
             <div class="folder-window" onclick="event.stopPropagation()">
@@ -290,6 +385,7 @@
                     <a href="https://www.phind.com/" class="app-item local-app"><span class="app-icon"><img data-domain="phind.com" alt="" /></span><span class="app-title">Phind</span></a>
                     <a href="https://chat.z.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="z.ai" alt="" /></span><span class="app-title">Z.ai</span></a>
                     <a href="https://www.junia.ai/tools/prompt-generator" class="app-item local-app"><span class="app-icon"><img data-domain="junia.ai" alt="" /></span><span class="app-title">Junia</span></a>
+                    <a href="https://generateprompt.ai/en" class="app-item local-app"><span class="app-icon"><img data-domain="generateprompt.ai" alt="" /></span><span class="app-title">Prompt Generator</span></a>
                 </div>
             </div>
         </div>
@@ -306,6 +402,9 @@
                     <a href="https://quickref.me/" class="app-item local-app"><span class="app-icon"><img data-domain="quickref.me" alt="" /></span><span class="app-title">QuickRef</span></a>
                     <a href="https://cs50.harvard.edu/x/2024/" class="app-item local-app"><span class="app-icon"><img data-domain="harvard.edu" alt="" /></span><span class="app-title">CS50x</span></a>
                     <a href="https://www.geogebra.org/calculator" class="app-item local-app"><span class="app-icon"><img data-domain="geogebra.org" alt="" /></span><span class="app-title">GeoGebra</span></a>
+                    <a href="https://www.netacad.com/" class="app-item local-app"><span class="app-icon"><img data-domain="netacad.com" alt="" /></span><span class="app-title">NetAcad</span></a>
+                    <a href="https://exercism.org/" class="app-item local-app"><span class="app-icon"><img data-domain="exercism.org" alt="" /></span><span class="app-title">Exercism</span></a>
+                    <a href="https://classcentral.com/" class="app-item local-app"><span class="app-icon"><img data-domain="classcentral.com" alt="" /></span><span class="app-title">Class Central</span></a>
                 </div>
             </div>
         </div>
@@ -377,6 +476,177 @@
                     <a href="https://mycima.autos/" class="app-item local-app"><span class="app-icon"><img data-domain="mycima.autos" alt="" /></span><span class="app-title">MyCima</span></a>
                     <a href="https://movizlnd.com/" class="app-item local-app"><span class="app-icon"><img data-domain="movizlnd.com" alt="" /></span><span class="app-title">MovizLand</span></a>
                     <a href="https://www.airconsole.com/" class="app-item local-app"><span class="app-icon"><img data-domain="airconsole.com" alt="" /></span><span class="app-title">AirConsole</span></a>
+                    <a href="https://movtime204.shop/home5" class="app-item local-app"><span class="app-icon"><img data-domain="movtime204.shop" alt="" /></span><span class="app-title">MovTime</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== AI TOOLS MODAL ===== -->
+        <div class="overlay" id="modal-aitools" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🤖 AI Tools</div>
+                <div class="folder-grid">
+                    <a href="https://www.bestofai.com/" class="app-item local-app"><span class="app-icon"><img data-domain="bestofai.com" alt="" /></span><span class="app-title">Best of AI</span></a>
+                    <a href="https://kimi.com/" class="app-item local-app"><span class="app-icon"><img data-domain="kimi.com" alt="" /></span><span class="app-title">Kimi</span></a>
+                    <a href="https://make.com/" class="app-item local-app"><span class="app-icon"><img data-domain="make.com" alt="" /></span><span class="app-title">Make</span></a>
+                    <a href="https://abacus.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="abacus.ai" alt="" /></span><span class="app-title">Abacus</span></a>
+                    <a href="https://templo.io/" class="app-item local-app"><span class="app-icon"><img data-domain="templo.io" alt="" /></span><span class="app-title">Templo</span></a>
+                    <a href="https://www.bardeen.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="bardeen.ai" alt="" /></span><span class="app-title">Bardeen</span></a>
+                    <a href="https://prowritingaid.com/" class="app-item local-app"><span class="app-icon"><img data-domain="prowritingaid.com" alt="" /></span><span class="app-title">ProWritingAid</span></a>
+                    <a href="https://lightpdf.com/" class="app-item local-app"><span class="app-icon"><img data-domain="lightpdf.com" alt="" /></span><span class="app-title">LightPDF</span></a>
+                    <a href="https://ideogram.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="ideogram.ai" alt="" /></span><span class="app-title">Ideogram</span></a>
+                    <a href="https://pika.art/" class="app-item local-app"><span class="app-icon"><img data-domain="pika.art" alt="" /></span><span class="app-title">Pika Labs</span></a>
+                    <a href="https://ithy.com/" class="app-item local-app"><span class="app-icon"><img data-domain="ithy.com" alt="" /></span><span class="app-title">Ithy</span></a>
+                    <a href="https://decktopus.com/" class="app-item local-app"><span class="app-icon"><img data-domain="decktopus.com" alt="" /></span><span class="app-title">Decktopus</span></a>
+                    <a href="https://staying.fun/en" class="app-item local-app"><span class="app-icon"><img data-domain="staying.fun" alt="" /></span><span class="app-title">Staying.fun</span></a>
+                    <a href="https://omagic.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="omagic.ai" alt="" /></span><span class="app-title">Omagic</span></a>
+                    <a href="https://antimatterai.com/" class="app-item local-app"><span class="app-icon"><img data-domain="antimatterai.com" alt="" /></span><span class="app-title">Antimatter</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== DESIGN & DEV MODAL ===== -->
+        <div class="overlay" id="modal-design" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🎨 Design &amp; Dev</div>
+                <div class="folder-grid">
+                    <a href="https://reactbits.dev/" class="app-item local-app"><span class="app-icon"><img data-domain="reactbits.dev" alt="" /></span><span class="app-title">ReactBits</span></a>
+                    <a href="https://versus.com/" class="app-item local-app"><span class="app-icon"><img data-domain="versus.com" alt="" /></span><span class="app-title">Versus</span></a>
+                    <a href="https://paperanimator.com/" class="app-item local-app"><span class="app-icon"><img data-domain="paperanimator.com" alt="" /></span><span class="app-title">Paper Animator</span></a>
+                    <a href="https://animejs.com/" class="app-item local-app"><span class="app-icon"><img data-domain="animejs.com" alt="" /></span><span class="app-title">Anime.js</span></a>
+                    <a href="https://napkin.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="napkin.ai" alt="" /></span><span class="app-title">Napkin</span></a>
+                    <a href="https://florafauna.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="florafauna.ai" alt="" /></span><span class="app-title">FloraFauna</span></a>
+                    <a href="https://3dlogolab.io/" class="app-item local-app"><span class="app-icon"><img data-domain="3dlogolab.io" alt="" /></span><span class="app-title">3D Logo Lab</span></a>
+                    <a href="https://logosystem.co/" class="app-item local-app"><span class="app-icon"><img data-domain="logosystem.co" alt="" /></span><span class="app-title">LogoSystem</span></a>
+                    <a href="https://recraft.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="recraft.ai" alt="" /></span><span class="app-title">Recraft</span></a>
+                    <a href="https://logodiffusion.com/" class="app-item local-app"><span class="app-icon"><img data-domain="logodiffusion.com" alt="" /></span><span class="app-title">LogoDiffusion</span></a>
+                    <a href="https://www.uiverse.io/" class="app-item local-app"><span class="app-icon"><img data-domain="uiverse.io" alt="" /></span><span class="app-title">Uiverse</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MORE TOOLS MODAL ===== -->
+        <div class="overlay" id="modal-more" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🔧 More Tools</div>
+                <div class="folder-grid">
+                    <a href="https://seostudio.tools/" class="app-item local-app"><span class="app-icon"><img data-domain="seostudio.tools" alt="" /></span><span class="app-title">SEO Studio</span></a>
+                    <a href="https://playground.com/" class="app-item local-app"><span class="app-icon"><img data-domain="playground.com" alt="" /></span><span class="app-title">Playground</span></a>
+                    <a href="https://submagic.co/" class="app-item local-app"><span class="app-icon"><img data-domain="submagic.co" alt="" /></span><span class="app-title">Submagic</span></a>
+                    <a href="https://www.getgobii.com/" class="app-item local-app"><span class="app-icon"><img data-domain="getgobii.com" alt="" /></span><span class="app-title">Gobii</span></a>
+                    <a href="https://3dtuning.com/en-US" class="app-item local-app"><span class="app-icon"><img data-domain="3dtuning.com" alt="" /></span><span class="app-title">3D Tuning</span></a>
+                    <a href="https://www.recall.com/" class="app-item local-app"><span class="app-icon"><img data-domain="recall" alt="" /></span><span class="app-title">Recall</span></a>
+                    <a href="https://fakedetail.com/" class="app-item local-app"><span class="app-icon"><img data-domain="fakedetail.com" alt="" /></span><span class="app-title">FakeDetail</span></a>
+                    <a href="https://urltoany.co/" class="app-item local-app"><span class="app-icon"><img data-domain="urltoany.co" alt="" /></span><span class="app-title">URLToAny</span></a>
+                    <a href="https://www.natively.dev/" class="app-item local-app"><span class="app-icon"><img data-domain="natively.dev" alt="" /></span><span class="app-title">Natively</span></a>
+                    <a href="https://phet.colorado.edu/" class="app-item local-app"><span class="app-icon"><img data-domain="phet.colorado.edu" alt="" /></span><span class="app-title">PhET</span></a>
+                    <a href="https://free-for.dev/" class="app-item local-app"><span class="app-icon"><img data-domain="free-for.dev" alt="" /></span><span class="app-title">Free-for.dev</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== AI & RESEARCH MODAL ===== -->
+        <div class="overlay" id="modal-research" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">📚 AI &amp; Research</div>
+                <div class="folder-grid">
+                    <a href="https://aistudio.google.com/" class="app-item local-app"><span class="app-icon"><img data-domain="aistudio.google.com" alt="" /></span><span class="app-title">AI Studio</span></a>
+                    <a href="https://mult.dev/" class="app-item local-app"><span class="app-icon"><img data-domain="mult.dev" alt="" /></span><span class="app-title">Mult.dev</span></a>
+                    <a href="https://prepostseo.com/" class="app-item local-app"><span class="app-icon"><img data-domain="prepostseo.com" alt="" /></span><span class="app-title">PrePostSEO</span></a>
+                    <a href="https://cssgridgenerator.io/" class="app-item local-app"><span class="app-icon"><img data-domain="cssgridgenerator.io" alt="" /></span><span class="app-title">CSS Grid Gen</span></a>
+                    <a href="https://runable.com/" class="app-item local-app"><span class="app-icon"><img data-domain="runable.com" alt="" /></span><span class="app-title">Runable</span></a>
+                    <a href="https://codedex.io/" class="app-item local-app"><span class="app-icon"><img data-domain="codedex.io" alt="" /></span><span class="app-title">CodeDex</span></a>
+                    <a href="https://olmocr.allenai.org/" class="app-item local-app"><span class="app-icon"><img data-domain="olmocr.allenai.org" alt="" /></span><span class="app-title">OLMoCR</span></a>
+                    <a href="https://imarena.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="imarena.ai" alt="" /></span><span class="app-title">Imarena</span></a>
+                    <a href="https://anything.com/" class="app-item local-app"><span class="app-icon"><img data-domain="anything.com" alt="" /></span><span class="app-title">Anything</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CONTENT & DEV MODAL ===== -->
+        <div class="overlay" id="modal-content" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">📄 Content &amp; Dev</div>
+                <div class="folder-grid">
+                    <a href="https://textbehindimage.com/" class="app-item local-app"><span class="app-icon"><img data-domain="textbehindimage.com" alt="" /></span><span class="app-title">Text Behind Image</span></a>
+                    <a href="https://hackslaining.com/" class="app-item local-app"><span class="app-icon"><img data-domain="hackslaining.com" alt="" /></span><span class="app-title">HackSlaining</span></a>
+                    <a href="https://mobbin.com/" class="app-item local-app"><span class="app-icon"><img data-domain="mobbin.com" alt="" /></span><span class="app-title">Mobbin</span></a>
+                    <a href="https://thiings.co/things" class="app-item local-app"><span class="app-icon"><img data-domain="thiings.co" alt="" /></span><span class="app-title">Thiings</span></a>
+                    <a href="https://apilayer.com/" class="app-item local-app"><span class="app-icon"><img data-domain="apilayer.com" alt="" /></span><span class="app-title">APILayer</span></a>
+                    <a href="https://www.minimax.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="minimax.ai" alt="" /></span><span class="app-title">MiniMax</span></a>
+                    <a href="https://gitreverse.com/" class="app-item local-app"><span class="app-icon"><img data-domain="gitreverse.com" alt="" /></span><span class="app-title">GitReverse</span></a>
+                    <a href="https://anara.com/" class="app-item local-app"><span class="app-icon"><img data-domain="anara.com" alt="" /></span><span class="app-title">Anara</span></a>
+                    <a href="https://sume.so/" class="app-item local-app"><span class="app-icon"><img data-domain="sume.so" alt="" /></span><span class="app-title">Sume</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== LEARNING & DESIGN MODAL ===== -->
+        <div class="overlay" id="modal-learning" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">📖 Learning &amp; Design</div>
+                <div class="folder-grid">
+                    <a href="https://chathub.com/" class="app-item local-app"><span class="app-icon"><img data-domain="chathub" alt="" /></span><span class="app-title">ChatHub</span></a>
+                    <a href="https://saurabhdaware.github.io/text-to-handwriting/" class="app-item local-app"><span class="app-icon"><img data-domain="saurabhdaware.github.io" alt="" /></span><span class="app-title">Text to Handwriting</span></a>
+                    <a href="https://emergent.sh/" class="app-item local-app"><span class="app-icon"><img data-domain="emergent.sh" alt="" /></span><span class="app-title">Emergent</span></a>
+                    <a href="https://kuse.ai/" class="app-item local-app"><span class="app-icon"><img data-domain="kuse.ai" alt="" /></span><span class="app-title">Kuse</span></a>
+                    <a href="https://dripwriter.com/" class="app-item local-app"><span class="app-icon"><img data-domain="dripwriter.com" alt="" /></span><span class="app-title">DripWriter</span></a>
+                    <a href="https://visualgo.net/" class="app-item local-app"><span class="app-icon"><img data-domain="visualgo.net" alt="" /></span><span class="app-title">VisuAlgo</span></a>
+                    <a href="https://cs.usfca.edu/" class="app-item local-app"><span class="app-icon"><img data-domain="cs.usfca.edu" alt="" /></span><span class="app-title">CS USFCA</span></a>
+                    <a href="https://csvistool.com/" class="app-item local-app"><span class="app-icon"><img data-domain="csvistool.com" alt="" /></span><span class="app-title">CSVisTool</span></a>
+                    <a href="https://www.flexboxlabs.netlify.app/" class="app-item local-app"><span class="app-icon"><img data-domain="flexboxlabs.netlify.app" alt="" /></span><span class="app-title">Flexbox Labs</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== EXTRA TOOLS MODAL ===== -->
+        <div class="overlay" id="modal-extra" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">⚡ Extra Tools</div>
+                <div class="folder-grid">
+                    <a href="https://opal.com/" class="app-item local-app"><span class="app-icon"><img data-domain="opal" alt="" /></span><span class="app-title">Opal</span></a>
+                    <a href="https://stitch.com/" class="app-item local-app"><span class="app-icon"><img data-domain="stitch" alt="" /></span><span class="app-title">Stitch</span></a>
+                    <a href="https://transitionalhook.com/" class="app-item local-app"><span class="app-icon"><img data-domain="transitionalhook" alt="" /></span><span class="app-title">Transitional Hook</span></a>
+                    <a href="https://submagic.co/" class="app-item local-app"><span class="app-icon"><img data-domain="submagic.co" alt="" /></span><span class="app-title">Submagic</span></a>
+                    <a href="https://x-minus.pro/ai" class="app-item local-app"><span class="app-icon"><img data-domain="x-minus.pro" alt="" /></span><span class="app-title">X-Minus AI</span></a>
+                    <a href="https://formia.so/" class="app-item local-app"><span class="app-icon"><img data-domain="formia.so" alt="" /></span><span class="app-title">Formia</span></a>
+                    <a href="https://ni3.app/" class="app-item local-app"><span class="app-icon"><img data-domain="ni3.app" alt="" /></span><span class="app-title">Ni3</span></a>
+                    <a href="https://uicolors.app/" class="app-item local-app"><span class="app-icon"><img data-domain="uicolors.app" alt="" /></span><span class="app-title">UIColors</span></a>
+                    <a href="https://kumospace.com/" class="app-item local-app"><span class="app-icon"><img data-domain="kumospace.com" alt="" /></span><span class="app-title">Kumospace</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== ADDITIONAL MODAL ===== -->
+        <div class="overlay" id="modal-extra2" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🔗 Additional</div>
+                <div class="folder-grid">
+                    <a href="https://github.com/ruvnet/RuView" class="app-item local-app"><span class="app-icon"><img data-domain="github.com" alt="" /></span><span class="app-title">RuView</span></a>
+                    <a href="https://imagineexplainers.com/" class="app-item local-app"><span class="app-icon"><img data-domain="imagineexplainers.com" alt="" /></span><span class="app-title">Imagine Explainers</span></a>
+                    <a href="https://sqlpd.com/" class="app-item local-app"><span class="app-icon"><img data-domain="sqlpd.com" alt="" /></span><span class="app-title">SQL Police</span></a>
+                    <a href="https://reactbits.dev/" class="app-item local-app"><span class="app-icon"><img data-domain="reactbits.dev" alt="" /></span><span class="app-title">ReactBits</span></a>
+                    <a href="https://versus.com/" class="app-item local-app"><span class="app-icon"><img data-domain="versus.com" alt="" /></span><span class="app-title">Versus</span></a>
+                    <a href="https://paperanimator.com/" class="app-item local-app"><span class="app-icon"><img data-domain="paperanimator.com" alt="" /></span><span class="app-title">Paper Animator</span></a>
+                    <a href="https://remove.photos/" class="app-item local-app"><span class="app-icon"><img data-domain="remove.photos" alt="" /></span><span class="app-title">Remove Photos</span></a>
+                    <a href="https://imagineexplainers.com/" class="app-item local-app"><span class="app-icon"><img data-domain="imagineexplainers.com" alt="" /></span><span class="app-title">Imagine Explainers</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== AI STUDIO MODAL ===== -->
+        <div class="overlay" id="modal-aistudio" onclick="closeModal(event)">
+            <div class="folder-window" onclick="event.stopPropagation()">
+                <div class="window-title">🎯 AI Studio</div>
+                <div class="folder-grid">
+                    <a href="https://aistudio.google.com/" class="app-item local-app"><span class="app-icon"><img data-domain="aistudio.google.com" alt="" /></span><span class="app-title">Google AI Studio</span></a>
+                    <a href="https://flow.com/" class="app-item local-app"><span class="app-icon"><img data-domain="flow" alt="" /></span><span class="app-title">Flow</span></a>
+                    <a href="https://skywork.com/" class="app-item local-app"><span class="app-icon"><img data-domain="skywork" alt="" /></span><span class="app-title">Skywork</span></a>
+                    <a href="https://emergent.sh/" class="app-item local-app"><span class="app-icon"><img data-domain="emergent.sh" alt="" /></span><span class="app-title">Emergent</span></a>
+                    <a href="https://canvas.com/" class="app-item local-app"><span class="app-icon"><img data-domain="canvas" alt="" /></span><span class="app-title">Canvas</span></a>
+                    <a href="https://pomelli.com/" class="app-item local-app"><span class="app-icon"><img data-domain="pomelli" alt="" /></span><span class="app-title">Pomelli</span></a>
+                    <a href="https://opal.com/" class="app-item local-app"><span class="app-icon"><img data-domain="opal" alt="" /></span><span class="app-title">Opal</span></a>
+                    <a href="https://stitch.com/" class="app-item local-app"><span class="app-icon"><img data-domain="stitch" alt="" /></span><span class="app-title">Stitch</span></a>
                 </div>
             </div>
         </div>
