@@ -514,7 +514,7 @@
     }
 
     /* ============================
-       13. SETTINGS FUNCTIONALITY - FIXED
+       13. SETTINGS FUNCTIONALITY - WITH LOCAL WALLPAPER SUPPORT
     ============================ */
 
     // Store background state globally
@@ -525,6 +525,15 @@
 
     function loadSettings() {
         const saved = localStorage.getItem('nexusSettings');
+        
+        // Check for locally stored wallpaper
+        const localWallpaper = localStorage.getItem('nexusCustomBgDataUrl');
+        const localWallpaperType = localStorage.getItem('nexusCustomBgType');
+        
+        if (localWallpaper && localWallpaperType === 'local') {
+            currentBackground.type = 'custom';
+            currentBackground.url = localWallpaper;
+        }
         
         if (saved) {
             try {
@@ -538,12 +547,13 @@
                     applyThemeOnly(settings.theme);
                 }
                 
-                // Load background state
-                if (settings.backgroundType) {
+                // Load background state (but don't override local wallpaper if present)
+                if (settings.backgroundType && !localWallpaper) {
                     currentBackground.type = settings.backgroundType;
                     currentBackground.url = settings.customBackgroundUrl || '';
-                    
-                    // Apply background after theme
+                    applyBackgroundOnly();
+                } else if (localWallpaper) {
+                    // Apply local wallpaper
                     applyBackgroundOnly();
                 } else {
                     // Default background
@@ -569,9 +579,11 @@
                 }
             } catch (e) {
                 console.warn('Failed to load settings:', e);
-                applyBackgroundOnly();
+                if (!localWallpaper) {
+                    applyBackgroundOnly();
+                }
             }
-        } else {
+        } else if (!localWallpaper) {
             // Default settings
             currentBackground.type = 'gradient';
             currentBackground.url = '';
@@ -585,18 +597,17 @@
             use24Hour: use24Hour,
             theme: document.querySelector('.setting-control.primary[data-theme]')?.getAttribute('data-theme') || 'dark',
             backgroundType: currentBackground.type,
-            customBackgroundUrl: currentBackground.type === 'custom' ? currentBackground.url : '',
+            customBackgroundUrl: currentBackground.type === 'custom' && !currentBackground.url.startsWith('data:') ? currentBackground.url : '',
             searchEngine: currentSearchEngine,
             hiddenDockItems: getHiddenDockItems()
         };
         localStorage.setItem('nexusSettings', JSON.stringify(settings));
         
-        // Save custom background URL separately for easy access
-        if (currentBackground.type === 'custom' && currentBackground.url) {
+        // Save custom background URL separately for easy access (only for URL-based, not data URLs)
+        if (currentBackground.type === 'custom' && currentBackground.url && !currentBackground.url.startsWith('data:')) {
             localStorage.setItem('nexusCustomBg', currentBackground.url);
-        } else {
-            localStorage.removeItem('nexusCustomBg');
         }
+        // Data URLs are already saved in nexusCustomBgDataUrl
     }
 
     function getHiddenDockItems() {
@@ -667,7 +678,7 @@
         const body = document.body;
         
         if (currentBackground.type === 'custom' && currentBackground.url) {
-            // Custom image
+            // Custom image (either URL or data URL from local upload)
             body.style.backgroundImage = `url('${currentBackground.url}')`;
             body.style.backgroundSize = 'cover';
             body.style.backgroundPosition = 'center';
@@ -716,12 +727,22 @@
 
     // Combined function for background change
     function applyBackground(bg) {
-        if (bg && bg.startsWith('http')) {
+        if (bg && bg.startsWith('data:image')) {
+            // This is a data URL from local upload
             currentBackground.type = 'custom';
             currentBackground.url = bg;
+            localStorage.setItem('nexusCustomBgDataUrl', bg);
+            localStorage.setItem('nexusCustomBgType', 'local');
+        } else if (bg && bg.startsWith('http')) {
+            currentBackground.type = 'custom';
+            currentBackground.url = bg;
+            localStorage.removeItem('nexusCustomBgDataUrl');
+            localStorage.removeItem('nexusCustomBgType');
         } else {
             currentBackground.type = bg;
             currentBackground.url = '';
+            localStorage.removeItem('nexusCustomBgDataUrl');
+            localStorage.removeItem('nexusCustomBgType');
         }
         applyBackgroundOnly();
         saveSettings();
@@ -749,7 +770,78 @@
     }
 
     /* ============================
-       14. IMPORT/EXPORT AS CSV
+       14. LOCAL WALLPAPER UPLOAD HANDLER
+    ============================ */
+    function handleLocalWallpaperUpload() {
+        const fileInput = document.getElementById('wallpaper-upload');
+        const applyBtn = document.getElementById('apply-uploaded-bg');
+        
+        if (!fileInput || !applyBtn) return;
+        
+        // Preview when file is selected
+        fileInput.addEventListener('change', function(e) {
+            const file = this.files[0];
+            if (file) {
+                // Show file name
+                const label = this.closest('.setting-row').querySelector('.setting-label');
+                if (label) {
+                    label.textContent = `Selected: ${file.name}`;
+                }
+            }
+        });
+        
+        applyBtn.addEventListener('click', function() {
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select an image file first.');
+                return;
+            }
+            
+            // Check if it's an image
+            if (!file.type.startsWith('image/')) {
+                alert('Please select a valid image file.');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const imageDataUrl = event.target.result;
+                
+                // Save to localStorage
+                localStorage.setItem('nexusCustomBgDataUrl', imageDataUrl);
+                localStorage.setItem('nexusCustomBgType', 'local');
+                
+                // Apply the background
+                currentBackground.type = 'custom';
+                currentBackground.url = imageDataUrl;
+                applyBackgroundOnly();
+                saveSettings();
+                
+                // Update UI
+                document.querySelectorAll('[data-bg]').forEach(btn => {
+                    btn.classList.toggle('primary', btn.getAttribute('data-bg') === 'custom');
+                });
+                
+                // Reset file input
+                fileInput.value = '';
+                const label = fileInput.closest('.setting-row').querySelector('.setting-label');
+                if (label) {
+                    label.textContent = 'Upload from Device';
+                }
+                
+                alert('✅ Wallpaper applied successfully!');
+            };
+            
+            reader.onerror = function() {
+                alert('Error reading the file. Please try again.');
+            };
+            
+            reader.readAsDataURL(file);
+        });
+    }
+
+    /* ============================
+       15. IMPORT/EXPORT AS CSV
     ============================ */
     
     function exportData() {
@@ -1108,7 +1200,7 @@
     }
 
     /* ============================
-       15. SETUP EVENT LISTENERS
+       16. SETUP EVENT LISTENERS
     ============================ */
 
     document.querySelector('[data-time-format]')?.addEventListener('click', function() {
@@ -1329,7 +1421,7 @@
     });
 
     /* ============================
-       16. INITIALIZATION
+       17. INITIALIZATION
     ============================ */
 
     // Load everything in correct order
@@ -1340,6 +1432,7 @@
         addAddWebsiteButtons();
         addRemoveButtonsToApps();
         addImportExportButtons();
+        handleLocalWallpaperUpload(); // Add local wallpaper upload handler
     }, 500);
 
 })();
